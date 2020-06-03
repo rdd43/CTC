@@ -41,15 +41,15 @@
                 </div>
             </div>
             <div class="card p-3 ">
-                <form>
+                <form action="" method="post">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend"> <span class="input-group-text">First and last name</span>
                         </div>
                         <input type="text" aria-label="First name" class="form-control" placeholder="First Name"
-                        name=fname ">
+                        name="fname" required>
 
                 <input type="text " aria-label="Last name " class="form-control
-                        " placeholder="Last Name " name="lname ">
+                        " placeholder="Last Name " name="lname" required>
 
             </div>
 
@@ -64,10 +64,10 @@
                 </div>
 
                 <input type="text " aria-label="Email " class="form-control
-                        " placeholder="Email " name="email ">
+                        " placeholder="Email " name="email" required>
 
                 <input type="text " aria-label="Phone " class="form-control
-                        " placeholder="Phone " name="phone ">
+                        " placeholder="Phone " name="phone" required>
 
             </div>
 
@@ -82,7 +82,7 @@
                 </div>
 
                 <input type="text " aria-label="Password " class="form-control
-                        " name="password " placeholder="Password ">
+                        " name="password" id="password" placeholder="Password " onchange="check_pass()" required>
 
             </div>
 
@@ -97,7 +97,7 @@
                 </div>
 
                 <input type="text " aria-label="cfPassword " class="form-control
-                        " name="cfpassword " placeholder="Confirm Password ">
+                        " name="cfpassword" id="cfpassword" placeholder="Confirm Password" onchange="check_pass()" required>
 
             </div>
 
@@ -112,7 +112,7 @@
                 </div>
 
                 <input type="text " aria-label="College " class="form-control
-                        " placeholder="College " name="college ">
+                        " placeholder="College " name="college" required>
 
                 <div class="input-group-prepend ">
 
@@ -121,7 +121,7 @@
                 </div>
 
                 <input type="text " aria-label="Major " class="form-control
-                        " placeholder="Major " name="major ">
+                        " placeholder="Major " name="major" required>
 
                 
 
@@ -134,12 +134,99 @@
 
 
 
-            <button type="submit " class="btn btn-primary ">Submit</button>
+            <input type="submit" class="btn btn-primary" id="submit">
 
         </form>
 
     </div>
+<script>
+    
+    function check_pass() {
 
+    if (document.getElementById('password').value ==
+            document.getElementById('cfpassword').value) {
+        document.getElementById('submit').disabled = false;
+		        document.getElementById('submit').value="Submit";
+    } else {
+        document.getElementById('submit').disabled = true;
+        document.getElementById('submit').value="Passwords do not match!";
+		
+    }
+    if (document.getElementById('password').value.length<8){
+        document.getElementById('submit').disabled = true;
+        document.getElementById('submit').value="Make sure password has >=8 characters!";
+    }
+}
+</script>
+	
+<div style="height:1200px;width:1200px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+<?php
+echo "This is just for testing purposes. Will redirect to login page once it is ready lol";
+$db = new SQLite3('Users_Mentor.db') or die('Unable to open database');
+
+if(!empty($_POST)){
+    
+       $query = <<<EOD
+     CREATE TABLE IF NOT EXISTS profile_mentor(id integer PRIMARY KEY, first text, last text, email text, password text, phone text, college text, major text);
+
+EOD;
+ $db->exec($query) or die("Unable to create table");
+
+if (isset($_POST['fname'])){
+        //INPUTTING
+        $first=$_POST['fname'];
+        $last=$_POST['lname'];
+        $email=$_POST['email'];
+		$password=password_hash($_POST['password'], PASSWORD_DEFAULT);
+		$phone=$_POST['phone'];
+		$college=$_POST['college'];
+        $major=$_POST['major'];
+        
+        $query="insert into profile_mentor(first, last, email, password, phone, college, major) values('$first', '$last', '$email', '$password','$phone', '$college', '$major');";
+        $db->exec($query) or die("Unable to create entry");
+        echo "INputted";
+        $result = $db->query('SELECT * FROM profile_mentor') or die('Query failed');
+        
+        while ($row = $result->fetchArray())
+{
+    //irst,last,college,major,interests,athlete,price_base,special_price,about_me_small,about_me_big,achievements,service_skills,review_num,review_text
+echo nl2br("------------------------------------------------------------------ \n");
+  echo nl2br($row['first'] . "\n");
+  echo nl2br($row['last'] . "\n");
+  echo nl2br($row['email'] . "\n");
+  echo nl2br($row['password'] . "\n");
+  echo nl2br($row['phone'] . "\n");
+  echo nl2br($row['college'] . "\n");
+  echo nl2br($row['major'] . "\n");
+
+}
+    
+//   $text=$_POST['message']; 
+
+}
+}else{
+    echo "here";
+$result = $db->query('SELECT * FROM profile_mentor') or die('Query failed');
+        
+        while ($row = $result->fetchArray())
+{
+    //irst,last,college,major,interests,athlete,price_base,special_price,about_me_small,about_me_big,achievements,service_skills,review_num,review_text
+echo nl2br("------------------------------------------------------------------ \n");
+  echo nl2br($row['first'] . "\n");
+  echo nl2br($row['last'] . "\n");
+  echo nl2br($row['email'] . "\n");
+  echo nl2br($row['password'] . "\n");
+  echo nl2br($row['phone'] . "\n");
+  echo nl2br($row['college'] . "\n");
+  echo nl2br($row['major'] . "\n");
+
+}
+}
+
+
+
+?>
+</div>
 </main><!-- /.container -->
 
 
