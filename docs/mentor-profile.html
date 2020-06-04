@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" href="./img/icon.png" />
+        <title>Basic - Bootstrap 4 with Gulp 4</title>
+    </head>
+    
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler"
+                type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#register">Register</a>
+
+                        </li>
+                    </ul> <span class="navbar-text font-weight-bold white-text"><a href="signin.html">Sign In</a></span>
+                </div>
+            </nav>
+        </header>
+        <main class="main mt-5">
+            <div class="container mt-2">
+                <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+                    <div class="row">
+                        <div class="col-lg-6 px-0">
+                            <img class=" img-fluid" src="img/hello.jpg">
+                        </div>
+                        <div class="col-lg-6 px-0">
+                             <h1 name="college" class="font-weight-bold display-4 font-italic text-right">College</h1>
+                             <h1 name="major" class="display-4 font-italic text-right">Major</h1>
+                            <div class="text-right mt-2" id="picturechangetab">
+                                <button class="btn" data-toggle="collapse" data-target="#pictureChange"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                     <h3 style="color:lightblue">Change Profile Picture</h3>
+                                </button>
+                                <div id="pictureChange" class="collapse hide" aria-labelledby="pictureChange"
+                                data-parent="#picturechangetab">
+                                    <form method="post" enctype="multipart/form-data">
+                                        <div>
+                                            <input type="file" name="profilepicture" accept="image/png, image/jpeg">></div>
+                                        <div class="text-center mt-2">
+                                            <button type="submit" name="SubmitForPictureChange" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-md-8">
+                     <h1 class="pb-3 mb-4 font-italic border-bottom">About Me</h1>
+                    <div class="about">
+                        <p>If you would like to know more about me, please read the following below!</p>
+                        <hr>
+                        <p>Cum sociis natoque penatibus et magnis nascetur ridiculus mus. Aenean
+                            eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                            Sed posuere consectetur est at lobortis. Cras mattis consectetur purus
+                            sit amet fermentum.</p>
+                        <blockquote>
+                            <p>Curabitur blandit tempus porttitor. ornare vel eu leo. Nullam id dolor
+                                id nibh ultricies vehicula ut id elit.</p>
+                        </blockquote>
+                        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur
+                            purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    </div>
+                </div>
+                <aside class="col-md-4 blog-sidebar">
+                    <div class="p-3 mb-3 bg-light rounded">
+                         <h4 class="font-italic">Sidebar</h4>
+                    </div>
+                    <div class="p-3">
+                         <h4 class="font-italic">Find Me Elsewhere</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">GitHub</a>
+                            </li>
+                            <li><a href="#">Twitter</a>
+                            </li>
+                            <li><a href="#">Facebook</a>
+                            </li>
+                            <li><a href="#">Instagram</a>
+                            </li>
+                            <p>Just Something We Might add. Maybe we wont, we should talk functionality
+                                and what we want and dont want on this pgae later</p>
+                        </ol>
+                    </div>
+                </aside>
+                <div class="text-left mt-2 w-100" id="aboutChangeTab">
+                    <div class="text-center mt-2">
+                        <button class="btn" data-toggle="collapse" data-target="#aboutChange"
+                        aria-expanded="true" aria-controls="collapseOne">
+                             <h3 class style="color:lightblue">Change Your About Me</h3>
+                        </button>
+                    </div>
+                    <div id="aboutChange" class="collapse hide" aria-labelledby="aboutChange"
+                    data-parent="#aboutChangeTab">
+                        <div class="form-group mt-2">
+                            <textarea class="form-control" name="aboutchangetext" rows="3"></textarea>
+                        </div>
+                        <div class="text-center mt-2">
+                            <button type="submit" name="SubmitForAboutChange" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <hr>
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                 <h1 class="display-4">Book a Meeting</h1>
+                <p class="lead">Chose Below one of the options that I offer.</p>
+            </div>
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                         <h4 class="my-0 font-weight-normal">One Time</h4>
+                    </div>
+                    <div class="card-body">
+                         <h1 class="card-title pricing-card-title">$30 <small class="text-muted">/ meet</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Point 1</li>
+                            <li>Point 2</li>
+                            <li>Point 3</li>
+                            <li>Point 4</li>
+                        </ul>
+                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Schedule Now</button>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                         <h4 class="my-0 font-weight-normal">Three Times</h4>
+                    </div>
+                    <div class="card-body">
+                         <h1 class="card-title pricing-card-title">20 <small class="text-muted">/ meet</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Point 1</li>
+                            <li>Point 2</li>
+                            <li>Point 3</li>
+                            <li>Point 4</li>
+                        </ul>
+                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Schedule Now</button>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                         <h4 class="my-0 font-weight-normal">Full Mentorship</h4>
+                    </div>
+                    <div class="card-body">
+                         <h1 class="card-title pricing-card-title">15 <small class="text-muted">/ meet</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Point 1</li>
+                            <li>Point 2</li>
+                            <li>Point 3</li>
+                            <li>Point 4</li>
+                        </ul>
+                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Schedule Now</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer container text-center mt-5">
+            <p>&copy; CTC</p>
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script src="js/all.js"></script>
+    </body>
+
+</html>
