@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" href="./img/icon.png" />
+        <title>Basic - Bootstrap 4 with Gulp 4</title>
+    </head>
+    
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler"
+                type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#register">Register</a>
+
+                        </li>
+                    </ul> <span class="navbar-text font-weight-bold white-text"><a href="signin.php">Sign In</a></span>
+                </div>
+            </nav>
+        </header>
+        <main class="main mt-5">
+            <div class="container p-3 mt-2">
+                <div class="card mb-4 shadow-sm text-center">
+                     <h1 class="card-header my-0">Please Fill Out This Form To The Best Of Your Ability</h1>
+                    <div class="card-body">
+                        <div class="Ethnicity Questions">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                     <h3 class="card-body text-right">Ethnicity:</h3>
+                                </div>
+                                <div class="col-lg-auto">
+                                    <form class="form-check card-body d-inline-block">
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="EthnicityOptions" id="EthnicityOptions1"
+                                            value="Caucasian">
+                                            <label class="form-check-label" for="EthnicityOptions1">Caucasian</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="EthnicityOptions" id="EthnicityOptions2"
+                                            value="African American">
+                                            <label class="form-check-label" for="EthnicityOptions2">African American</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="EthnicityOptions" id="EthnicityOptions3"
+                                            value="Asian">
+                                            <label class="form-check-label" for="EthnicityOptions3">Asian</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="EthnicityOptions" id="EthnicityOptions4"
+                                            value="Hispanic or Latino">
+                                            <label class="form-check-label" for="EthnicityOptions4">Hispanic or Latino</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="EthnicityOptions" id="EthnicityOptions5"
+                                            value="Other">
+                                            <label class="form-check-label" for="EthnicityOptions5">Other</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <p class="card-body font-weight-light">If you chose other, please input it here so that we may update and improve
+                                    our system!</p>
+                                <form class="card-body d-inline-block">
+                                    <input name="EthnicityOptionsOther" type="text" class="form-control" placeholder="Other">
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="Gender Questions">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                     <h3 class="card-body text-right">Gender:</h3>
+                                </div>
+                                <div class="col-lg-auto">
+                                    <form class="form-check card-body d-inline-block">
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="GenderOptions" id="GenderOptions1"
+                                            value="Male">
+                                            <label class="form-check-label" for="GenderOptions1">Male</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="GenderOptions" id="GenderOptions2"
+                                            value="Female">
+                                            <label class="form-check-label" for="GenderOptions2">Female</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="GenderOptions" id="GenderOptions3"
+                                            value="Other">
+                                            <label class="form-check-label" for="GenderOptions3">Other</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <p class="card-body font-weight-light">If you chose other, please input it here so that we may update and improve
+                                    our system!</p>
+                                <form class="card-body d-inline-block">
+                                    <input name="GenderOptionsOther" type="text" class="form-control" placeholder="Other">
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="LGBT Questions">
+                            <div class="row">
+                                <div class="col-lg-auto">
+                                     <h3 class="card-body text-right">Do You Identify With LGBT:</h3>
+                                </div>
+                                <div class="col-lg-auto">
+                                    <form class="form-check card-body d-inline-block">
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="LGBTOptions" id="LGBTOptions1"
+                                            value="Yes">
+                                            <label class="form-check-label" for="LGBTOptions1">Yes</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="GenderOptions" id="LGBTOptions2"
+                                            value="No">
+                                            <label class="form-check-label" for="LGBTOptions2">No</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="CvD Questions">
+                            <div class="row">
+                                <div class="col-lg-auto">
+                                     <h3 class="card-body text-right">Commuting or Dorming:</h3>
+                                </div>
+                                <div class="col-lg-auto">
+                                    <form class="form-check card-body d-inline-block">
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="CvDOptions" id="CvDOptions"
+                                            value="Commuting">
+                                            <label class="form-check-label" for="CvDOptions">Commuter</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="CvDOptions" id="CvDOptions2"
+                                            value="Dormer">
+                                            <label class="form-check-label" for="CvDOptions2">Dormer</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="FvS Questions">
+                            <div class="row">
+                                <div class="col-lg-auto">
+                                     <h3 class="card-body text-right">Are You In A Fraternity or Sorority:</h3>
+                                </div>
+                                <div class="col-lg-auto">
+                                    <form class="form-check card-body d-inline-block">
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="FvSOptions" id="FvSOptions1"
+                                            value="Yes">
+                                            <label class="form-check-label" for="LGBTOptions1">Yes</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="FvSOptions" id="FvSOptions2"
+                                            value="No">
+                                            <label class="form-check-label" for="LGBTOptions2">No</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="Arts Questions">
+                            <div class="row">
+                                <div class="col-lg-auto">
+                                     <h3 class="card-body text-right">Are You Involved in The Arts:</h3>
+                                </div>
+                                <div class="col-lg-auto">
+                                    <form class="form-check card-body d-inline-block">
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="ArtsOptions" id="ArtsOptions1"
+                                            value="Yes">
+                                            <label class="form-check-label" for="ArtsOptions1">Yes</label>
+                                        </div>
+                                        <div class="form-check form-check-inline m-2">
+                                            <input class="form-check-input" type="radio" name="ArtsOptions" id="ArtsOptions2"
+                                            value="No">
+                                            <label class="form-check-label" for="ArtsOptions2">No</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <p class="card-body font-weight-light">If yes, list what kind of art: Music, Theater, etc</p>
+                                <form class="card-body d-inline-block">
+                                    <input name="GenderOptionsOther" type="text" class="form-control" placeholder="Other">
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="Athletic Questions">
+                            <div class="row">
+                                 <h3 class="card-body text-center">Select all of these that you are involved in:</h3>
+                            </div>
+                            <div class="row text-center">
+                                <form class="form-check card-body d-inline-block">
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="AthleticOptions"
+                                        id="AthleticOptions1" value="Football">
+                                        <label class="form-check-label" for="AthleticOptions1">Football</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="AthleticOptions"
+                                        id="AthleticOptions2" value="Soccer">
+                                        <label class="form-check-label" for="AthleticOptions2">Soccer</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="AthleticOptions"
+                                        id="AthleticOptions3" value="Golf">
+                                        <label class="form-check-label" for="AthleticOptions3">Golf</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="AthleticOptions"
+                                        id="AthleticOptions4" value="Swimming">
+                                        <label class="form-check-label" for="AthleticOptions4">Swimming</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row text-center">
+                                <p class="card-body font-weight-light">If there is something that we missed, please input it here so that we
+                                    may update and improve our system!</p>
+                                <p class="card-body font-weight-light">If multiple things, please list with a ", " seperating them, ie: "Football,
+                                    Soccer"</p>
+                                <form class="card-body d-inline-block">
+                                    <input name="GenderOptionsOther" type="text" class="form-control" placeholder="Other">
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="Service Questions">
+                            <div class="row">
+                                 <h3 class="card-body text-center">Select all of these that you can help with:</h3>
+                            </div>
+                            <div class="row text-center">
+                                <form class="form-check card-body d-inline-block">
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="ServiceOptions"
+                                        id="ServiceOptions1" value="The Common App / Application Process">
+                                        <label class="form-check-label" for="ServiceOptions1">The Common App / Application Process</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="ServiceOptions"
+                                        id="ServiceOptions2" value="Application Essays / Writing Skills">
+                                        <label class="form-check-label" for="ServiceOptions2">Application Essays / Writing Skills</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="ServiceOptions"
+                                        id="ServiceOptions3" value="Financial Aid / FAFSA / CSS">
+                                        <label class="form-check-label" for="ServiceOptions3">Financial Aid / FAFSA / CSS</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="ServiceOptions"
+                                        id="ServiceOptions4" value="College Interviews">
+                                        <label class="form-check-label" for="ServiceOptions4">College Interviews</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="ServiceOptions"
+                                        id="ServiceOptions5" value="SAT General Questions">
+                                        <label class="form-check-label" for="ServiceOptions5">SAT General Questions</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="ServiceOptions"
+                                        id="ServiceOptions6" value="AP Exams">
+                                        <label class="form-check-label" for="ServiceOptions6">AP Exams</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="ServiceOptions"
+                                        id="ServiceOptions7" value="Internships / Jobs / Research Positions">
+                                        <label class="form-check-label" for="ServiceOptions7">Internships / Jobs / Research Positions</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m-2">
+                                        <input class="form-check-input" type="checkbox" name="ServiceOptions"
+                                        id="ServiceOptions8" value="College Life">
+                                        <label class="form-check-label" for="ServiceOptions8">College Life</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row text-center">
+                                <p class="card-body font-weight-light">If there is something that we missed, please input it here so that we
+                                    may update and improve our system!</p>
+                                <form class="card-body d-inline-block">
+                                    <input name="GenderOptionsOther" type="text" class="form-control" placeholder="Other">
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center mt-2">
+                            <button type="submit" name="SubmitForAboutChange" class="w-25 btn btn-outline-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer container text-center mt-5">
+            <p>&copy; CTC</p>
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script src="js/all.js"></script>
+    </body>
+
+</html>

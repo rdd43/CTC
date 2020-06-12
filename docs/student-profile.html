@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" href="./img/icon.png" />
+        <title>Basic - Bootstrap 4 with Gulp 4</title>
+    </head>
+    
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler"
+                type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#register">Register</a>
+
+                        </li>
+                    </ul> <span class="navbar-text font-weight-bold white-text"><a href="signin.php">Sign In</a></span>
+                </div>
+            </nav>
+        </header>
+        <main class="main mt-5">
+            <div class="container mt-2">
+                <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+                    <div class="row">
+                        <div class="col-lg-6 px-0">
+                            <img class="img-fluid" style="width: 75%" src="mentor-img/profile_holder.png">
+                        </div>
+                        <div class="col-lg-6 px-0">
+                             <h1 name="name" class="font-weight-bold display-4 font-italic text-right">Robert Diasio</h1>
+                             <h1 name="colMaj" class="display-4 font-italic text-right">NJIT, Computer Science</h1>
+                             <h1 name="rating" class="display-8 font-italic text-right"></h1>
+                            <h1 name="mem_since" class="display-8 font-italic text-right">No Ratings Yet!</h1>
+                             <h1 name="mem_since" class="display-8 font-italic text-right">Mentor since 2020</h1>
+                            <div class="text-right mt-2" id="picturechangetab">
+                                <button class="btn" data-toggle="collapse" data-target="#pictureChange"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                     <h3 style="color:lightblue">Change Profile Picture</h3>
+                                </button>
+                                <div id="pictureChange" class="collapse hide" aria-labelledby="pictureChange"
+                                data-parent="#picturechangetab">
+                                    <form method="post" enctype="multipart/form-data">
+                                        <div>
+                                            <input type="file" required="" name="profilepicture" accept="image/png, image/jpeg">&gt;</div>
+                                        <div class="text-center mt-2">
+                                            <button type="submit" name="SubmitForPictureChange" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-md-8">
+                     <h1 class="pb-3 mb-4 font-italic border-bottom">About Me</h1>
+                    <div class="about">
+                        <p>If you would like to know more about me, please read the following below!</p>
+                        <hr>
+                        <p>Tell us a bit about yourself! Use this portion of your profile to be personal--connect
+                            with potential students, and emphasize your story, goals, and reasons you
+                            want to help them!</p>
+                    </div>
+                </div>
+                <aside class="col-md-4 blog-sidebar">
+                    <div class="p-3 mb-3 bg-light rounded">
+                         <h4 class="font-italic">Sidebar</h4>
+                    </div>
+                    <div class="p-3">
+                         <h4 class="font-italic">Find Me Elsewhere</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">GitHub</a>
+                            </li>
+                            <li><a href="#">Twitter</a>
+                            </li>
+                            <li><a href="#">Facebook</a>
+                            </li>
+                            <li><a href="#">Instagram</a>
+                            </li>
+                            <p>Just Something We Might add. Maybe we wont, we should talk functionality
+                                and what we want and dont want on this pgae later</p>
+                        </ol>
+                    </div>
+                </aside>
+                <div class="text-left mt-2 w-100" id="aboutChangeTab">
+                    <div class="text-center mt-2">
+                        <button class="btn" data-toggle="collapse" data-target="#aboutChange"
+                        aria-expanded="true" aria-controls="collapseOne">
+                             <h3 class="" style="color:lightblue">Change Your About Me</h3>
+                        </button>
+                    </div>
+                    <div id="aboutChange" class="collapse hide" aria-labelledby="aboutChange"
+                    data-parent="#aboutChangeTab">
+                        <div class="form-group mt-2">
+                            <textarea form="about_form" class="form-control" name="aboutchangetext"
+                            rows="3">Tell us a bit about yourself! Use this portion of your profile to be personal--connect
+                                with potential students, and emphasize your story, goals, and reasons you
+                                want to help them!</textarea>
+                        </div>
+                        <form action="" method="post" id="about_form">
+                            <div class="text-center mt-2">
+                                <input type="submit" name="SubmitForAboutChange" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                     <h1 class="pb-3 mb-4 font-italic">Achievements</h1>
+                    <div class="achievements">
+                        <p>Here is your spot to brag! Use this space as an informal resume, to sell
+                            your services based on your past achievements, jobs/internships, research
+                            positions, test scores or GPA...anything worth sharing!</p>
+                    </div>
+                </div>
+                <div class="text-left mt-2 w-100" id="achChangeTab">
+                    <div class="text-center mt-2">
+                        <button class="btn" data-toggle="collapse" data-target="#achChange" aria-expanded="true"
+                        aria-controls="collapseOne">
+                             <h3 class="" style="color:lightblue">Change Your Achievements</h3>
+                        </button>
+                    </div>
+                    <div id="achChange" class="collapse hide" aria-labelledby="achChange"
+                    data-parent="#achChangeTab">
+                        <div class="form-group mt-2">
+                            <textarea form="ach_form" class="form-control" name="achchangetext" rows="3">Here is your spot to brag! Use this space as an informal resume, to sell
+                                your services based on your past achievements, jobs/internships, research
+                                positions, test scores or GPA...anything worth sharing!</textarea>
+                        </div>
+                        <form action="" method="post" id="ach_form">
+                            <div class="text-center mt-2">
+                                <input type="submit" name="SubmitForAchievementChange" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer container text-center mt-5">
+            <p>&copy; CTC</p>
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script src="js/all.js"></script>
+    </body>
+
+</html>
