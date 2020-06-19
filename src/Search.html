@@ -1,0 +1,410 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<partial src="header.html"></partial>
+<partial src="main_menu.html"></partial>
+<main role="main">
+    <!-- This is going to be the search bar area -->
+    <div class="mt-3 mx-auto text-center" id="sorting/searching">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="display-2 font-weight-bold">Search For A Mentor Here</h1>
+                <h2 class="card-subtitle">Filter Results Below</h2>
+            </div>
+            <div class="card-body">
+                <!-- The form is split into rows and each row will have different things -->
+                <!-- The higher rows are more important things -->
+                <form>
+                    <!-- College and Major -->
+                    <div class="row w-75 mb-3 mx-auto">
+                        <div class="col">
+                            <input type="text" class="form-control form-control-lg" placeholder="FULL College Name"
+                                   id="College">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control form-control-lg" placeholder="Major" id="Major">
+                        </div>
+                    </div>
+                    <!-- Single Select Attributes -->
+                    <div class="row w-75 mb-3 mx-auto">
+                        <div class="col">
+                            <p>Ethnicity</p>
+                            <select class="custom-select mr-sm-2" id="EthnicityOptions">
+                                <option selected></option>
+                                <option value="Caucasian">Caucasian</option>
+                                <option value="African American">African American</option>
+                                <option value="Asian">Asian</option>
+                                <option value="Hispanic or Latino">Hispanic or Latino</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <p>Gender</p>
+                            <select class="custom-select mr-sm-2" id="Gender">
+                                <option selected></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="uhhhh">uhhhh</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <p>LGTBQ+</p>
+                            <select class="custom-select mr-sm-2" id="LGTBQ">
+                                <option selected></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <p>Commuting or Dorming</p>
+                            <select class="custom-select mr-sm-2" id="Commuter/Dormer">
+                                <option selected></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <p>First Generation Student</p>
+                            <select class="custom-select mr-sm-2" id="FGS">
+                                <option selected></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <p>In a Fraternity/Sorority</p>
+                            <select class="custom-select mr-sm-2" id="Fraternity/Sorority">
+                                <option selected></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Drop Down Attributes -->
+                    <!--This is the Original Method, Keeping it just in case
+
+                    <div class="row w-75 mb-3 mx-auto">
+                        <div class="dropdown mt-3 mx-auto">
+                            <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select Activities You Are Interested In
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="form-check dropdown-item">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultValue1">
+                                    <label class="form-check-label" for="defaultValue1">
+                                        Default checkbox
+                                    </label>
+                                </div>
+                                <div class="form-check dropdown-item">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultValue2">
+                                    <label class="form-check-label" for="defaultValue2">
+                                        Default checkbox
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Searchable Attributes -->
+                    <div class="select2-container--default w-50 mx-auto">
+                        <p style="font-size: 23px">Search For More Attributes Here</p>
+                        <div class="row mb-3 mx-auto">
+                            <form>
+                                <select class="form-control select2">
+                                    <option selected disabled>Select</option>
+                                    <option>Option1</option>
+                                    <option>Option2</option>
+                                    <option>Option3</option>
+                                    <option>Option4</option>
+                                    <option>Option5</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-10 mx-auto">
+        <div class="results-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 text-center">Results</h1>
+        </div>
+        <!-- each row of items will be held in the "card deck" section. We dont need a div for the specific row, but if you want to add it
+         because it makes it easier for you to read it, go ahead-->
+        <div class="card-deck mb-3 mt-2 text-center">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <div class="card-deck mb-3 mt-2 text-center">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <div class="card-deck mb-3 mt-2 text-center">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">Robert Diasio</h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title pricing-card-title"><small class="text-muted">College</small></h2>
+                    <div class="hovereffect">
+                        <img src="img/hss.jpg" class="img-fluid" alt="Profile Picture">
+                        <div class="overlay">
+                            <h2></h2>
+                            <p style="font-size: 20px">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">See My Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+<!-- This is for the searchbar -->
+<script>
+    $('.select2').select2();
+</script>
+<style>
+    .select2-container .select2-selection--single {
+        height: 34px !important;
+    }
+
+    .select2-container--default .select2-selection--single {
+        border: 1px solid #ccc !important;
+        border-radius: 0px !important;
+    }
+
+</style>
+<partial src="footer.html"></partial>
